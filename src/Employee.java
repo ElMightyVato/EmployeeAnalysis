@@ -5,12 +5,12 @@ public class Employee {
 
     // Constructor
     public Employee(String name, int age, double salary) {
-        this.name = name;
+        this.name = name; // Remember with this we are assigning passed variable to the class's variable
         this.age = age;
         this.salary = salary;
     }
 
-    // Getters
+    // Getters: Giving us access to the variables
     public String getName() {
         return name;
     }
@@ -21,7 +21,7 @@ public class Employee {
         return salary;
     }
 
-    // Setter for salary (used for updates)
+    // Setter for salary (using this to update salary when we give 10% increase
     public void setSalary(double salary) {
         this.salary = salary;
     }
