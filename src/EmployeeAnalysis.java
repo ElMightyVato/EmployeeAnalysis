@@ -23,22 +23,22 @@ public class EmployeeAnalysis {
         System.out.println("Employees earning more than 70000: ");
         employees.stream()
                 .filter(e -> e.getSalary() > 70000) // I'm keeping only employees with salaries greater than 70000
-                .map(Employee::getName)// Here i'm converting each employee to just their name
+                .map(Employee::getName)// Here I'm converting each employee to just their name
                 .forEach(System.out::println); // I'm printing each name on a new line
 
         // 2. Average Salary of employees over 30
         OptionalDouble averageSalary = employees.stream()
                 .filter(e -> e.getAge() > 30)
                 .mapToDouble(Employee::getSalary) // I'm converting employee just their salaries as doubles
-                .average(); // Now i'm calculating the average of my filtered salaries
+                .average(); // Now I'm calculating the average of my filtered salaries
 
         System.out.println("\nAverage salary of employees over 30: ");
         averageSalary.ifPresent(
                 avg -> System.out.println("$" + String.format("%.2f", avg))
-                // With format i'm just grabbing up to the 2 decimal places and printing it with a dollar sign
+                // With, format I'm just grabbing up to the 2 decimal places and printing it with a dollar sign
         );
 
-        // Here i'm doing if no average is present it'll output the following.
+        // Here I'm doing if no average is present it'll output the following.
         if (!averageSalary.isPresent()) {
             System.out.println("No employees over 30.");
         }
